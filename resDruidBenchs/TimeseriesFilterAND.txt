@@ -1,0 +1,5 @@
+Densities	concise	csTime	roaring	rbTime
+VeryLowCard	concise	61	roaring	61
+LowCard	concise	64	roaring	58
+MediumCard	concise	135	roaring	59
+HighCard	concise	170	roaring	67

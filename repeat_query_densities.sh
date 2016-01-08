@@ -3,6 +3,8 @@
 # (c) the authors
 # Licensed under the Apache License, Version 2.0.
 #
+# To benchmark SearchFilter, TimeseriesNot and TimeseriesSelect queries, the code should be adapted manually.    
+#
 exec 1<&-
 exec 2<&-
 innerLoop(){

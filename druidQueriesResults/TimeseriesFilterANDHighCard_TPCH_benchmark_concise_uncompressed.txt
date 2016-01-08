@@ -1,0 +1,1 @@
+[{"timestamp":"1992-01-01T00:00:00.000Z","result":{"l_extendedprice":1.0345286490234375E7}}]

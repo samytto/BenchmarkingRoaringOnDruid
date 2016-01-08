@@ -1,0 +1,1 @@
+[{"timestamp":"1992-01-01T00:00:00.000Z","result":[{"l_shipmode":"SHIP","l_extendedprice":41684.80078125}]}]
