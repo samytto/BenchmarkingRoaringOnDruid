@@ -1,0 +1,2 @@
+Bitmaps	scheme	size scheme size
+Bitmaps	concise	2.9	roaring	3.4
