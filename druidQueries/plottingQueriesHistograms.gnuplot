@@ -5,52 +5,84 @@
 # Licensed under the Apache License, Version 2.0.
 #
 
-load "linespointsstyle.gnuplot"
+set term pdfcairo fontscale 0.7
+set termopt enhanced
+load "../linespointsstyle.gnuplot"
 
-dataset = "../resDruidBenchs/GroupByFilterOR.txt"
+dataset = "../../results/resDruidBenchs/GroupByFilterOR.txt"
 set xlabel "Density"
 set ylabel "Times (ms)"
-set style data histogram
-set style histogram cluster gap 3
-set style fill solid border -1
-set boxwidth 0.9
-set xtic rotate scale 0
+set style data histograms
+set style histogram cluster gap 1
+set style fill solid 1.0 border -1
+set boxwidth 0.9 relative
+set xtic rotate
 set auto x
 
+set key inside left	
 set yrange[50:*]
 set out "../DruidQueriesFigures/groupByFilterOR.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 
 dataset = "../resDruidBenchs/TimeseriesFilterOR.txt"
 
-set out "../DruidQueriesFigures/TimeseriesFilterOR.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes
+set out "../../DruidQueriesFigures/TimeseriesFilterOR.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 			
 dataset = "../resDruidBenchs/TopNFilterOR.txt"
 
 set out "../DruidQueriesFigures/TopNFilterOR.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes			
-
-set key inside left			
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 			
 dataset = "../resDruidBenchs/GroupByFilterAND.txt"
 
 set out "../DruidQueriesFigures/groupByFilterAND.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 
 dataset = "../resDruidBenchs/TimeseriesFilterAND.txt"
 
 set out "../DruidQueriesFigures/TimeseriesFilterAND.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 			
 dataset = "../resDruidBenchs/TopNFilterAND.txt"
 
 set out "../DruidQueriesFigures/TopNFilterAND.pdf"
-plot    	dataset  every :::0::0 using 3:xtic(1) title 'Concise' with boxes, \
-			dataset  every :::0::0 using 5:xtic(1) title 'Roaring' with boxes
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+
+dataset = "../resDruidBenchs/SelectFilterAND.txt"
+
+set out "../DruidQueriesFigures/SelectFilterAND.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+
+dataset = "../resDruidBenchs/SelectFilterOR.txt"
+
+set out "../DruidQueriesFigures/SelectFilterOR.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+
+dataset = "../resDruidBenchs/TimeseriesSelect.txt"
+
+set out "../DruidQueriesFigures/TimeseriesSelect.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+
+set yrange[0:3000]			
+dataset = "../resDruidBenchs/SearchFilterOR.txt"
+
+set out "../DruidQueriesFigures/SearchFilterOR.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+			
+set yrange[0:*]			
+dataset = "../resDruidBenchs/TimeseriesNot.txt"
+
+set out "../DruidQueriesFigures/TimeseriesNot.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
+				
+				
+set xlabel "Fichiers plats stcokant les bitmaps"
+set ylabel "Size (MB)"
+set yrange[0:*]
+set xtic rotate by 0			
+dataset = "../resDruidBenchs/BitmapsDiskSize.txt"
+
+set out "../DruidQueriesFigures/BitmapsDiskSize.pdf"
+plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 			
