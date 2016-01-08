@@ -1,0 +1,15 @@
+{
+  "queryType": "search",
+  "dataSource": "###DATASOURCE###",
+  "granularity": "all",
+  "searchDimensions": [
+    "l_discount",
+    "l_quantity"
+  ],
+  "query": {
+    "type": "insensitive_contains",
+    "value": "0"
+  },
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ],
+  "context":{"useCache":false,"populateCache":false,"finalize":false}
+}

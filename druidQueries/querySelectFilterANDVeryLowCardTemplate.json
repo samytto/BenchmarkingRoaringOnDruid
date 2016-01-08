@@ -1,0 +1,22 @@
+{
+  "queryType"  : "select",
+  "dataSource" : "###DATASOURCE###",
+  "granularity": "day",
+  "dimensions":	["l_shipmode", "l_shipdate"],
+  "metrics":["L_TAX_doubleSum", "L_QUANTITY_longSum"],
+  "context":{"useCache":false,"populateCache":false},
+  "filter": {
+    "type": "and", 
+    "fields": [
+          { "type": "selector", "dimension": "l_commitdate",    "value": "1997-05-12" },
+          { "type": "selector", "dimension": "l_receiptdate",   "value": "1997-06-02" },
+          { "type": "selector", "dimension": "l_suppkey",       "value": "4623" },
+          { "type": "selector", "dimension": "l_comment",       "value": "c packages"},
+          { "type": "selector", "dimension": "l_partkey",       "value": "22120" },
+          { "type": "selector", "dimension": "l_orderkey",              "value": "5050562" }
+        ]
+      },
+  "pagingSpec":{"pagingIdentifiers": {}, "threshold":5},  
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ]
+}
+

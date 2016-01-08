@@ -1,0 +1,38 @@
+{
+  "queryType"  : "select",
+  "dataSource" : "###DATASOURCE###",
+  "granularity": "day",
+  "dimensions":	["l_shipmode", "l_shipdate"],
+  "metrics":["L_TAX_doubleSum", "L_QUANTITY_longSum"],
+  "context":{"useCache":false,"populateCache":false},
+  "filter": {
+    "type": "or", 
+    "fields": [
+           { "type": "selector", "dimension": "l_quantity","value": "35" },
+          { "type": "selector", "dimension": "l_quantity","value": "25" },
+          { "type": "selector", "dimension": "l_quantity","value": "32" },
+          { "type": "selector", "dimension": "l_quantity","value": "23" },
+          { "type": "selector", "dimension": "l_quantity","value": "16" },
+          { "type": "selector", "dimension": "l_quantity","value": "9" },
+          { "type": "selector", "dimension": "l_quantity","value": "41" },
+          { "type": "selector", "dimension": "l_quantity","value": "1" },
+          { "type": "selector", "dimension": "l_quantity","value": "36" },
+          { "type": "selector", "dimension": "l_quantity","value": "42" },
+           { "type": "selector", "dimension": "l_discount",    "value": "0.05" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.07" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.02" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.01" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.10" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.04" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.09" },
+          { "type": "selector", "dimension": "l_discount",    "value": "0.03" },
+          { "type": "selector", "dimension": "l_linenumber",   "value": "7" },
+          { "type": "selector", "dimension": "l_linenumber",   "value": "6" },
+          { "type": "selector", "dimension": "l_linenumber",   "value": "5" },
+          { "type": "selector", "dimension": "l_linenumber",   "value": "4" }
+        ]
+      },
+  "pagingSpec":{"pagingIdentifiers": {}, "threshold":5},  
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ]
+}
+

@@ -1,0 +1,23 @@
+{
+  "queryType"  : "groupBy",
+  "dataSource" : "###DATASOURCE###",
+  "granularity": "all",
+  "dimensions": ["l_shipmode"],
+  "context":{"useCache":false,"populateCache":false,"finalize":false},
+  "filter": {
+    "type": "and",
+    "fields": [
+          { "type": "selector", "dimension": "l_shipinstruct","value": "COLLECT COD" },
+          { "type": "selector", "dimension": "l_shipmode", "value": "AIR" },
+          { "type": "selector", "dimension": "l_returnflag",    "value": "N" },
+          { "type": "selector", "dimension": "l_linestatus",    "value": "O" },
+          { "type": "selector", "dimension": "l_tax",    "value": "0.06"},
+          { "type": "selector", "dimension": "l_linenumber",   "value": "1" },
+	  { "type": "selector", "dimension": "l_discount",   "value": "0.05" }
+        ]
+      },
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ],
+  "aggregations": [
+    { "type": "doubleSum",   "name": "l_extendedprice",           "fieldName": "L_EXTENDEDPRICE_doubleSum" }
+  ]
+}

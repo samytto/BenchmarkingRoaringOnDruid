@@ -1,0 +1,11 @@
+{
+  "queryType"  : "timeseries",
+  "dataSource" : "###DATASOURCE###",
+  "granularity": "all",
+  "context":{"useCache":false,"populateCache":false,"finalize":false},
+  "filter": { "type": "selector", "dimension": "l_linenumber",      "value": "1" },
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ],
+  "aggregations": [
+ 	{ "type": "count",   "name": "count"}
+  ]
+}

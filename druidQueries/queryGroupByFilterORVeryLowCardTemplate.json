@@ -1,0 +1,39 @@
+{
+  "queryType"  : "groupBy",
+  "dataSource" : "###DATASOURCE###",
+  "granularity": "all",
+  "dimensions":	["l_shipmode"],
+  "context":{"useCache":false,"populateCache":false,"finalize":false},
+  "filter": {
+    "type": "or", 
+    "fields": [
+          { "type": "selector", "dimension": "l_receiptdate","value": "1994-12-03" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-03-04" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-05-06" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-05-23" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1994-10-12" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-01-04" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1992-10-20" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1992-07-10" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-02-25" },
+          { "type": "selector", "dimension": "l_receiptdate","value": "1993-08-05" },
+	   { "type": "selector", "dimension": "l_suppkey",    "value": "5099" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "5055" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "4900" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "4605" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "5682" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "4981" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "5229" },
+          { "type": "selector", "dimension": "l_suppkey",    "value": "4997" },
+          { "type": "selector", "dimension": "l_commitdate",   "value": "1993-10-06" },
+          { "type": "selector", "dimension": "l_commitdate",   "value": "1992-11-21" },
+          { "type": "selector", "dimension": "l_commitdate",   "value": "1993-05-06" },
+          { "type": "selector", "dimension": "l_commitdate",   "value": "1994-07-20" }
+        ]
+      },  
+  "intervals": [ "1980-12-31T23:59:59.999/2005-01-30T00:00:00.000" ],
+  "aggregations": [
+    { "type": "doubleSum",   "name": "L_TAX",           "fieldName": "L_TAX_doubleSum" }
+  ]
+}
+
