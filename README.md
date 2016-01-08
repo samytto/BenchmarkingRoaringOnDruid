@@ -1,4 +1,5 @@
 This code is licensed under Apache License, Version 2.0 (ASL2.0).
+
 (c) Samy Chambi and Charles Allen
 
 This project is a benchmark to evaluate Roaring and Concise bitmaps performances when used to boost more used analytical Druid's queries in production. 
