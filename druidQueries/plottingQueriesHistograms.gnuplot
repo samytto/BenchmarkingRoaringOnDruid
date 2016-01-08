@@ -1,5 +1,6 @@
 #!/usr/bin/env gnuplot  
 # gnuplot 4.6 or better required
+
 #
 # (c) the authors
 # Licensed under the Apache License, Version 2.0.
@@ -7,9 +8,8 @@
 
 set term pdfcairo fontscale 0.7
 set termopt enhanced
-load "../linespointsstyle.gnuplot"
+load "linespointsstyle.gnuplot"
 
-dataset = "../../results/resDruidBenchs/GroupByFilterOR.txt"
 set xlabel "Density"
 set ylabel "Times (ms)"
 set style data histograms
@@ -19,6 +19,8 @@ set boxwidth 0.9 relative
 set xtic rotate
 set auto x
 
+dataset = "../resDruidBenchs/GroupByFilterOR.txt"
+
 set key inside left	
 set yrange[50:*]
 set out "../DruidQueriesFigures/groupByFilterOR.pdf"
@@ -26,7 +28,7 @@ plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 
 dataset = "../resDruidBenchs/TimeseriesFilterOR.txt"
 
-set out "../../DruidQueriesFigures/TimeseriesFilterOR.pdf"
+set out "../DruidQueriesFigures/TimeseriesFilterOR.pdf"
 plot dataset using 3:xtic(1) ti 'Concise', '' u 5 ti 'Roaring'
 			
 dataset = "../resDruidBenchs/TopNFilterOR.txt"
