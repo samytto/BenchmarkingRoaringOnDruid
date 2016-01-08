@@ -8,6 +8,7 @@
   "filter": {
     "type": "and", 
     "fields": [
+	  { "type": "selector", "dimension": "l_shipdate","value": "1997-06-01" },	 
           { "type": "selector", "dimension": "l_commitdate",    "value": "1997-05-12" },
           { "type": "selector", "dimension": "l_shipmode", "value": "AIR" },
           { "type": "selector", "dimension": "l_quantity",    "value": "34" },
